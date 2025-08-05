@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Haven Bookstore</title>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ3dpf5zs1oBLJkHdUjz6YUo72BSi1KG8&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
+    <style>
+        gmp-map {
+            width: 80%;
+            height: 300px;
+            justify-self: center;
+            border: solid #2E4057;
+        }
+        h1 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #2E4057;
+        }
+        h3 {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            justify-self: center;
+        }
+        p {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        label {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        /* Navigation Styles */
+        .nav-container{
+            background: #2E4057;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        .nav-logo img {
+            width: 40px;
+            display: block;
+        }
+        .nav-menu li a {
+            color: #C7B65E;
+            text-decoration: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+            padding: 10px;
+            display: block;
+        }
+        .nav-memu li a:hover {
+            background: #2E4057;
+            border-radius: 4px;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #FFF7EE;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        #menu-toggle {
+            display: none;
+        }
+        /* Mobile Menu Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #2E4057;
+                padding: 10px 0;
+            }
+            #menu-toggle:checked ~ .nav-menu {
+                display: flex;
+            }
+            .nav-menu li {
+                text-align: center;
+            }
+            .nav-logo img {
+                width: 40px;
+                margin-left: 10px;
+            }
+            .hamburger {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<nav class="nav-container">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <ul class="nav-menu">
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="custom.html">Custom Page</a></li>
+    </ul>
+    <div class="nav-logo">
+        <a href="Homepage.html"><img style="width: 50px;" src="Assets/Client3_LogoPalette1_FFF7EE.png"></a>
+    </div>
+</nav>
+<body style="background-color: #FFF7EE; margin: 0; padding: 0;">
+    <div>
+        <h1 style="padding: 10px;">About Book Haven Bookstore</h1>
+        <p style="padding: 10px;">Book Haven Bookstore is a local treasure for book enthusiasts, offering a diverse selection of books, magazines, journals, and office supplies. With a deep-rooted commitment to fostering literary exploration and a love for reading, it is embarking on the creation of an online presence that mirrors its dedication to the world of words. Serving a broad audience of book lovers and knowledge seekers, its central goal is to amplify its visibility, cultivate a vibrant literary community, and simplify the process of book inquiries and purchases. Its target audience comprises avid readers, students, and individuals in search of high-quality reading materials and office essentials. Book Haven Bookstore’s website theme revolves around celebrating the written word, creating an inviting digital space that encourages literary discovery, and supporting intellectual growth.</p>
+    </div>
+    <gmp-map center="40.52045440673828,-75.52410888671875" zoom="18" map-id="DEMO_MAP_ID">
+        <gmp-advanced-marker position="40.52045440673828,-75.52410888671875" title="Book Haven Bookstore"></gmp-advanced-marker>
+    </gmp-map>
+    <div style="justify-self: center;">
+        <h3>Send us a Message</h3>
+        <form action="submit-data.txt" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" plpaceholder="Enter your username"><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" placeholder="Feedback, custom order, etc."></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+<footer style="position: relative; justify-self: center; padding-bottom: 25px;">
+    <h3>Join our Discord 📲</h3>
+    <div style="justify-self: center;">
+    <a href="https://discord.com"><img width="30" src="Assets/discord.png"></a>
+    <a href="https://facebook.com"><img width="30" src="Assets/facebook.png"></a>
+    <a href="https://instagram.com"><img width="30" src="Assets/instagram.png"></a>
+    </div>
+</footer>
+</html>
